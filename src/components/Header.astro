@@ -1,0 +1,14 @@
+---
+import data from '../../public/data.json'
+---
+
+<header class="border-b border-white/20 px-10 py-6">
+  <div class="flex items-center justify-between w-full">
+    <h2 class="text-3xl font-semibold">THE PLANETS</h2>
+    <ul class="flex flex-row items-center gap-6 uppercase font-spartan font-bold text-[11px]">
+        {
+          data.map((el) => <li><a href="">{el.name}</a></li>)
+        }    
+    </ul>
+  </div>
+</header>

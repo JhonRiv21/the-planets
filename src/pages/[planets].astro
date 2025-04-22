@@ -1,0 +1,17 @@
+---
+import data from '../../public/data.json'
+import Layout from '../layouts/Layout.astro';
+
+export function getStaticPaths() {
+  return data.map((planet) => ({
+    params: { planets: planet.name.toLowerCase() }
+  }))
+  
+}
+
+const { planets } = Astro.params;
+---
+
+<Layout>
+  <div>Planet, {planets}!</div>
+</Layout>

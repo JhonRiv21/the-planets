@@ -1,3 +1,9 @@
+---
+import { ClientRouter } from 'astro:transitions';
+import "../styles/dots.css";
+import Header from '../components/Header.astro';
+
+---
 <!doctype html>
 <html lang="en">
 	<head>
@@ -5,11 +11,20 @@
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="stylesheet" href="./src/styles/global.css">
+		<link href="https://fonts.googleapis.com/css2?family=Antonio:wght@500&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Spartan:wght@400;700&display=swap" rel="stylesheet">
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro Basics</title>
+		<ClientRouter />
 	</head>
-	<body>
-		<slot />
+	<body class="bg-black text-white font-antonio">
+		<!-- <div class="doc-stars doc-stars--sm"></div>
+		<div class="doc-stars doc-stars--md"></div>
+		<div class="doc-stars doc-stars--lg"></div> -->
+		<Header />
+		<main class="px-10 py-6">
+			<slot />
+		</main>
 	</body>
 </html>
 
