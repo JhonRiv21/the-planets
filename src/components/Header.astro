@@ -8,12 +8,12 @@ import data from "../../public/data.json";
   >
     <h2 class="text-3xl font-semibold">THE PLANETS</h2>
     <ul
-      class="hidden lg:flex flex-row items-center gap-6 uppercase font-spartan font-bold text-[11px]"
+      class="hidden lg:flex flex-row items-center gap-3 uppercase font-spartan font-bold text-[11px]"
     >
       {
         data.map((el) => (
           <li>
-            <a href={el.name.toLowerCase()}>{el.name}</a>
+            <a class="p-3" href={el.name.toLowerCase()}>{el.name}</a>
           </li>
         ))
       }

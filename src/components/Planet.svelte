@@ -7,6 +7,13 @@
     internalText = "",
     surfaceText = "",
     wikipedia = "",
+    overviewImage = "",
+    internalImage = "",
+    surfaceImage = "",
+    overviewAlt = "",
+    internalAlt = "",
+    surfaceAlt = "",
+    color = "",
   } = $props();
 </script>
 
@@ -14,25 +21,26 @@
   class="flex flex-col gap-10 lg:flex-row items-center justify-center w-full"
 >
   <div class="w-full">
-    <div hidden={currentStep !== 1}>
-      <img src="src/assets/neptune/planet-neptune.svg" alt="" />
+    <div hidden={currentStep !== 1} class="flex justify-center">
+      <img src={overviewImage} alt="" />
     </div>
-    <div hidden={currentStep !== 2}>
-      <img src="src/assets/neptune/planet-neptune-internal.svg" alt="" />
+    <div hidden={currentStep !== 2} class="flex justify-center">
+      <img src={internalImage} alt="" />
     </div>
-    <div hidden={currentStep !== 3}>
+    <div hidden={currentStep !== 3} class="relative flex justify-center items-end">
       <div class="relative">
         <img
-          class="relative"
-          src="src/assets/neptune/planet-neptune.svg"
+          class="relative w-auto h-auto object-contain"
+          src={overviewImage}
           alt=""
         />
-        <img
-          class="absolute -bottom-20 translate-x-[140px]"
-          width="170"
-          src="src/assets/neptune/geology-neptune.png"
-          alt=""
-        />
+        <div class="absolute bottom-[-4rem] left-1/2 -translate-x-1/2">
+          <img
+            width="170"
+            src={surfaceImage}
+            alt=""
+          />
+        </div>
       </div>
     </div>
   </div>
@@ -48,7 +56,7 @@
     <p hidden={currentStep !== 3} class="font-spartan text-base leading-7">
       {surfaceText}
     </p>
-    <p class="font-spartan py-4 font-bold text-white/40">
+    <p class="font-spartan py-4 font-bold text-white/50">
       Source: <a
         href={wikipedia}
         class="underline text-white/60 inline-flex items-center gap-2"
@@ -61,17 +69,18 @@
         ></a
       >
     </p>
-
+    
+    <!-- purge-safe: bg-green bg-blue bg-orange bg-red bg-purple bg-yellow bg-aqua bg-brick -->
     <div class="hidden lg:block w-full space-y-5">
-      <button onclick={() => (currentStep = 1)} class="btn-tab"
+      <button onclick={() => (currentStep = 1)} class={`btn-tab ${currentStep === 1 ? `bg-${color}` : ''}`}
         ><span class="btn-tab-number">01</span>
         <span class="btn-tab-text">OVERVIEW</span></button
       >
-      <button onclick={() => (currentStep = 2)} class="btn-tab"
+      <button onclick={() => (currentStep = 2)} class={`btn-tab ${currentStep === 2 ? `bg-${color}` : ''}`}
         ><span class="btn-tab-number">02</span>
         <span class="btn-tab-text">INTERNAL STRUCTURE</span></button
       >
-      <button onclick={() => (currentStep = 3)} class="btn-tab"
+      <button onclick={() => (currentStep = 3)} class={`btn-tab ${currentStep === 3 ? `bg-${color}` : ''}`}
         ><span class="btn-tab-number">03</span>
         <span class="btn-tab-text">SURFACE GEOLOGY</span></button
       >

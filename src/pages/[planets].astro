@@ -17,7 +17,7 @@ const currentPlanetData = data.find(
 ---
 
 <Layout>
-  <main class="py-10 lg:px-20 space-y-20">
+  <main class="py-16 lg:px-20 space-y-20">
     <section class="flex justify-center items-center w-full">
       <Planet
         planet={currentPlanetData?.name}
@@ -25,6 +25,13 @@ const currentPlanetData = data.find(
         internalText={currentPlanetData?.["internal-structure"]}
         surfaceText={currentPlanetData?.["surface-geology"]}
         wikipedia={`https://en.wikipedia.org/wiki/${currentPlanetData?.name}_(planet)`}
+        overviewImage={currentPlanetData?.["image-overview"]}
+        internalImage={currentPlanetData?.["image-internal-structure"]}
+        surfaceImage={currentPlanetData?.["image-surface-geology"]}
+        overviewAlt={`Planet ${currentPlanetData?.name}`}
+        internalAlt={`Planet ${currentPlanetData?.name} internal structure`}
+        surfaceAlt={`Planet ${currentPlanetData?.name} surface geology`}
+        color={currentPlanetData?.color}
         client:load
       />
     </section>
@@ -46,4 +53,7 @@ const currentPlanetData = data.find(
       />
     </section>
   </main>
+  <div class="flex justify-end">
+    <a href="https://github.com/JhonRiv21" target="_blank" class="text-[11px] font-spartan text-white/60 hover:underline">Developed by Jhon Rivero</a>
+  </div>
 </Layout>

@@ -24,7 +24,7 @@
   }
 
   .btn-tab-number {
-    @apply text-white/50 font-spartan font-bold text-xs;
+    @apply text-white/60 font-spartan font-bold text-xs;
   }
 	
 	.btn-tab-text {
