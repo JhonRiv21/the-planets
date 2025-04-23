@@ -1,6 +1,6 @@
 ---
 import { ClientRouter } from "astro:transitions";
-import "../styles/global.css";  
+import "../styles/global.css";
 import "../styles/dots.css";
 import Header from "../components/Header.astro";
 ---
@@ -10,7 +10,13 @@ import Header from "../components/Header.astro";
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/assets/saturn/planet-saturn.svg" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="/assets/saturn/planet-saturn.svg"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Antonio:wght@500&display=swap"
       rel="stylesheet"
@@ -20,6 +26,10 @@ import Header from "../components/Header.astro";
       rel="stylesheet"
     />
     <meta name="generator" content={Astro.generator} />
+    <meta
+      name="description"
+      content="Explora los planetas del sistema solar en una experiencia interactiva y animada."
+    />
     <title>The Planets</title>
     <ClientRouter />
   </head>
