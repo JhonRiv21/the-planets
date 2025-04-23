@@ -54,17 +54,19 @@
 
   <div class="w-full">
     <div hidden={currentStep !== 1} class="flex justify-center">
-      <img 
+      <img
+        class=""
         src={overviewImage}
         decoding="async" 
-        alt="" 
+        alt={overviewAlt} 
       />
     </div>
     <div hidden={currentStep !== 2} class="flex justify-center">
-      <img 
+      <img
+        class=""
         src={internalImage}
         decoding="async" 
-        alt="" 
+        alt={internalAlt}
       />
     </div>
     <div hidden={currentStep !== 3} class="relative flex justify-center items-end">
@@ -73,7 +75,7 @@
           class="relative w-auto h-auto object-contain"
           src={overviewImage}
           decoding="async"
-          alt=""
+          alt={overviewAlt}
         />
         <div class="absolute bottom-[-4rem] left-1/2 -translate-x-1/2">
           <img
@@ -81,7 +83,7 @@
             class="h-auto object-contain"
             src={surfaceImage}
             decoding="async"
-            alt=""
+            alt={surfaceAlt}
           />
         </div>
       </div>
