@@ -17,3 +17,17 @@
   --font-antonio: Antonio, sans-serif;
   --font-spartan: Spartan, sans-serif;
 }
+
+@layer components {
+  .btn-tab {
+    @apply border border-white/40 w-full flex items-center gap-5 text-left py-4 px-5 cursor-pointer;
+  }
+
+  .btn-tab-number {
+    @apply text-white/50 font-spartan font-bold text-xs;
+  }
+	
+	.btn-tab-text {
+    @apply font-spartan text-[11px] font-bold;
+  }
+}

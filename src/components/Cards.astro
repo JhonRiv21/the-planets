@@ -1,0 +1,12 @@
+---
+const { title, content } = Astro.props;
+---
+
+<article class="border border-white/20 w-full py-5 px-8">
+  <p
+    class="pb-3 text-left font-spartan font-bold text-white/40 uppercase text-xs"
+  >
+    {title}
+  </p>
+  <h2 class="text-4xl text-left uppercase">{content}</h2>
+</article>

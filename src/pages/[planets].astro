@@ -1,17 +1,49 @@
 ---
-import data from '../../public/data.json'
-import Layout from '../layouts/Layout.astro';
+import data from "../../public/data.json";
+import Layout from "../layouts/Layout.astro";
+import Planet from "../components/Planet.svelte";
+import Cards from "../components/Cards.astro";
 
 export function getStaticPaths() {
   return data.map((planet) => ({
-    params: { planets: planet.name.toLowerCase() }
-  }))
-  
+    params: { planets: planet.name.toLowerCase() },
+  }));
 }
 
 const { planets } = Astro.params;
+const currentPlanetData = data.find(
+  (planet) => planet.name.toLowerCase() === planets
+);
 ---
 
 <Layout>
-  <div>Planet, {planets}!</div>
+  <main class="py-10 lg:px-20 space-y-20">
+    <section class="flex justify-center items-center w-full">
+      <Planet
+        planet={currentPlanetData?.name}
+        overviewText={currentPlanetData?.["overview"]}
+        internalText={currentPlanetData?.["internal-structure"]}
+        surfaceText={currentPlanetData?.["surface-geology"]}
+        wikipedia={`https://en.wikipedia.org/wiki/${currentPlanetData?.name}_(planet)`}
+        client:load
+      />
+    </section>
+    <section
+      class="grid grids-cols-1 md:grid-cols-2 xl:grid-cols-4 items-center gap-10"
+    >
+      <Cards
+        title="Rotation Time"
+        content={currentPlanetData?.["rotation-time"]}
+      />
+      <Cards
+        title="Revolution Time"
+        content={currentPlanetData?.["revolution-time"]}
+      />
+      <Cards title="Radius" content={currentPlanetData?.["radius"]} />
+      <Cards
+        title="Average Temp."
+        content={currentPlanetData?.["average-temp"]}
+      />
+    </section>
+  </main>
 </Layout>

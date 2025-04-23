@@ -7,7 +7,11 @@
     "image-overview": "src/assets/mercury/planet-mercury.svg",
     "image-internal-structure": "src/assets/mercury/planet-mercury-internal.svg",
     "image-surface-geology": "src/assets/mercury/geology-mercury.png",
-    "color": "aqua"
+    "color": "aqua",
+    "rotation-time": "58.6 Days",
+    "revolution-time": "87.97 Days",
+    "radius": "2,439.7 KM",
+    "average-temp": "430°c"
   },
   {
     "name": "venus",
@@ -17,7 +21,11 @@
     "image-overview": "src/assets/venus/planet-venus.svg",
     "image-internal-structure": "src/assets/venus/planet-venus-internal.svg",
     "image-surface-geology": "src/assets/venus/geology-venus.png",
-    "color": "yellow"
+    "color": "yellow",
+    "rotation-time": "243 Days",
+    "revolution-time": "224.7 Days",
+    "radius": "6,051.8 KM",
+    "average-temp": "471°c"
   },
   {
     "name": "earth",
@@ -27,7 +35,11 @@
     "image-overview": "src/assets/earth/planet-earth.svg",
     "image-internal-structure": "src/assets/earth/planet-earth-internal.svg",
     "image-surface-geology": "src/assets/earth/geology-earth.png",
-    "color": "blue"
+    "color": "blue",
+    "rotation-time": "0.99 Days",
+    "revolution-time": "365.26 Days",
+    "radius": "6,371 KM",
+    "average-temp": "16°c"
   },
   {
     "name": "mars",
@@ -37,7 +49,11 @@
     "image-overview": "src/assets/mars/planet-mars.svg",
     "image-internal-structure": "src/assets/mars/planet-mars-internal.svg",
     "image-surface-geology": "src/assets/mars/geology-mars.png",
-    "color": "red"
+    "color": "red",
+    "rotation-time": "1.03 Days",
+    "revolution-time": "1.88 Years",
+    "radius": "3,389.5 KM",
+    "average-temp": "-28°c"
   },
   {
     "name": "jupiter",
@@ -47,7 +63,11 @@
     "image-overview": "src/assets/jupiter/planet-jupiter.svg",
     "image-internal-structure": "src/assets/jupiter/planet-jupiter-internal.svg",
     "image-surface-geology": "src/assets/jupiter/geology-jupiter.png",
-    "color": "orange"
+    "color": "orange",
+    "rotation-time": "9.93 Hours",
+    "revolution-time": "11.86 Years",
+    "radius": "69,911 KM",
+    "average-temp": "-108°c"
   },
   {
     "name": "saturn",
@@ -57,7 +77,11 @@
     "image-overview": "src/assets/saturn/planet-saturn.svg",
     "image-internal-structure": "src/assets/saturn/planet-saturn-internal.svg",
     "image-surface-geology": "src/assets/saturn/geology-saturn.png",
-    "color": "yellow"
+    "color": "yellow",
+    "rotation-time": "10.8 Hours",
+    "revolution-time": "29.46 Years",
+    "radius": "58,232 KM",
+    "average-temp": "-138°c"
   },
   {
     "name": "uranus",
@@ -67,7 +91,11 @@
     "image-overview": "src/assets/uranus/planet-uranus.svg",
     "image-internal-structure": "src/assets/uranus/planet-uranus-internal.svg",
     "image-surface-geology": "src/assets/uranus/geology-uranus.png",
-    "color": "green"
+    "color": "green",
+    "rotation-time": "17.2 Hours",
+    "revolution-time": "84 Years",
+    "radius": "25,362 KM",
+    "average-temp": "-195°c"
   },
   {
     "name": "neptune",
@@ -77,6 +105,10 @@
     "image-overview": "src/assets/neptune/planet-neptune.svg",
     "image-internal-structure": "src/assets/neptune/planet-neptune-internal.svg",
     "image-surface-geology": "src/assets/neptune/geology-neptune.png",
-    "color": "blue"
+    "color": "blue",
+    "rotation-time": "16.08 Hours",
+    "revolution-time": "164.79 Years",
+    "radius": "24,622 KM",
+    "average-temp": "-201°c"
   }
 ]
