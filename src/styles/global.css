@@ -31,3 +31,7 @@
     @apply font-spartan text-[11px] font-bold;
   }
 }
+
+.forced-margin {
+	margin: 200px;
+}

@@ -1,0 +1,11 @@
+---
+import data from "../../public/data.json";
+
+const firstPlanet = data[0].name.toLowerCase();
+---
+<html>
+  <head>
+    <meta http-equiv="refresh" content={`0; url=/${firstPlanet}`} />
+  </head>
+  <body></body>
+</html>

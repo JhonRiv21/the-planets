@@ -17,7 +17,7 @@ const currentPlanetData = data.find(
 ---
 
 <Layout>
-  <main class="py-16 lg:px-20 space-y-20">
+  <main class="py-5 lg:py-16 lg:px-20 lg:space-y-20">
     <section class="flex justify-center items-center w-full">
       <Planet
         planet={currentPlanetData?.name}
@@ -36,7 +36,7 @@ const currentPlanetData = data.find(
       />
     </section>
     <section
-      class="grid grids-cols-1 md:grid-cols-2 xl:grid-cols-4 items-center gap-10"
+      class="grid grids-cols-1 md:grid-cols-2 xl:grid-cols-4 items-center gap-5 sm:gap-10"
     >
       <Cards
         title="Rotation Time"

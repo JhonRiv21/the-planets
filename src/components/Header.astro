@@ -1,22 +1,72 @@
 ---
 import data from "../../public/data.json";
+
+const { planets } = Astro.params;
 ---
 
-<header class="border-b border-white/20 px-10 py-6">
-  <div
-    class="flex items-center justify-between w-full max-w-screen-2xl mx-auto"
-  >
+<header class="border-b border-white/20 px-5 sm:px-10 py-6 text-white w-full relative z-50">
+  <div class="flex items-center justify-between w-full max-w-screen-2xl mx-auto">
     <h2 class="text-3xl font-semibold">THE PLANETS</h2>
+
+    <details id="mobile-menu" class="lg:hidden relative group">
+      <summary class="w-10 h-10 flex items-center justify-center cursor-pointer list-none">
+        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"
+          class="transition-transform duration-300 group-open:hidden">
+          <path fill="currentColor" d="M3 18v-2h18v2zm0-5v-2h18v2zm0-5V6h18v2z" />
+        </svg>
+
+        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"
+          class="absolute opacity-0 group-open:opacity-100 transition-opacity duration-300">
+          <path fill="currentColor"
+            d="M18.3 5.7 12 12l-6.3-6.3-1.4 1.4L10.6 12l-6.3 6.3 1.4 1.4L12 13.4l6.3 6.3 1.4-1.4L13.4 12l6.3-6.3z" />
+        </svg>
+      </summary>
+
+      <nav
+        class="absolute right-0 top-full w-60 bg-[#010101] shadow-md transform scale-95 opacity-0 transition-all duration-300 group-open:opacity-100 group-open:scale-100">
+        <ul class="flex flex-col items-start gap-4 p-5 uppercase font-spartan font-bold text-sm">
+          {data.map((el) => (
+            <li><a class="py-2 pr-20 menu-link w-full text-xs" href={el.name.toLowerCase()}>{el.name}</a></li>
+            <div class="h-[1px] w-full bg-gray-500" />
+          ))}
+        </ul>
+      </nav>
+    </details>
+
     <ul
-      class="hidden lg:flex flex-row items-center gap-3 uppercase font-spartan font-bold text-[11px]"
-    >
-      {
-        data.map((el) => (
+    class="hidden lg:flex flex-row items-center gap-3 uppercase font-spartan font-bold text-[11px]"
+  >
+    {
+      data.map((el) => {
+        const isActive = el.name.toLowerCase() === planets;
+        return (
           <li>
-            <a class="p-3" href={el.name.toLowerCase()}>{el.name}</a>
+            <a
+              class={`py-2 mx-3 ${
+                isActive ? 'border-b-2 border-current text-white' : 'text-white/60'
+              }`}
+              href={`/${el.name.toLowerCase()}`}
+            >
+              {el.name}
+            </a>
           </li>
-        ))
-      }
-    </ul>
+        );
+      })
+    }
+  </ul>
   </div>
 </header>
+
+<script is:inline>
+  document.addEventListener("click", (event) => {
+    const menu = document.getElementById("mobile-menu");
+
+    if (menu.hasAttribute("open") && !menu.contains(event.target)) {
+      menu.removeAttribute("open");
+    }
+
+    if (event.target.closest(".menu-link")) {
+      menu.removeAttribute("open");
+    }
+  });
+</script>

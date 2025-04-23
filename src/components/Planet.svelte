@@ -20,6 +20,38 @@
 <article
   class="flex flex-col gap-10 lg:flex-row items-center justify-center w-full"
 >
+  <div class="flex lg:hidden flex-row gap-3 justify-between w-full border-t border-b border-white/60 pt-4 px-2 sm:px-5 font-spartan font-bold text-[11px] uppercase">
+    <button
+      onclick={() => currentStep = 1}
+      class="relative flex flex-col items-center flex-1 cursor-pointer uppercase"
+    >
+      <span class={currentStep === 1 ? "text-white" : "text-white/60"}>Overview</span>
+      {#if currentStep === 1}
+        <div class={`mt-2 h-1.5 w-18 bg-${color}`}></div>
+      {/if}
+    </button>
+
+    <button
+      onclick={() => currentStep = 2}
+      class="relative flex flex-col items-center flex-1 cursor-pointer uppercase"
+    >
+      <span class={currentStep === 2 ? "text-white" : "text-white/60"}>Structure</span>
+      {#if currentStep === 2}
+        <div class={`mt-2 h-1.5 w-18 bg-${color}`}></div>
+      {/if}
+    </button>
+
+    <button
+      onclick={() => currentStep = 3}
+      class="relative flex flex-col items-center flex-1 cursor-pointer uppercase"
+    >
+      <span class={currentStep === 3 ? "text-white" : "text-white/60"}>Surface</span>
+      {#if currentStep === 3}
+        <div class={`mt-2 h-1.5 w-18 bg-${color}`}></div>
+      {/if}
+    </button>
+  </div>
+
   <div class="w-full">
     <div hidden={currentStep !== 1} class="flex justify-center">
       <img src={overviewImage} alt="" />
@@ -45,7 +77,7 @@
     </div>
   </div>
 
-  <div class="flex flex-col space-y-5 w-full lg:w-[60%]">
+  <div class="flex flex-col pt-10 sm:pt-0 space-y-5 w-full lg:w-[60%]">
     <h1 class="text-7xl font-bold uppercase pb-4">{planet}</h1>
     <p hidden={currentStep !== 1} class="font-spartan text-base leading-7">
       {overviewText}
